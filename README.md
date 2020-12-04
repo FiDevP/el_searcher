@@ -3,7 +3,7 @@
 ## Установка ##
 
 Клонируем репозиторий
->[GitHub]https://github.com/FiDevP/flask-elstic.git
+>[GitHub] https://github.com/FiDevP/el_searcher.git
 
 Устанавливаем зависимости
 >```

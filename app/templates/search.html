@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Поиск</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-8 blog-main">
+                <form method="post">
+                     <div class="form-group">
+                        <label for="site-search">Поиск по вашему тексту</label>
+                        <input type="search" class="form-control" required id="site-search" name="search" >
+                     </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+        {% if text_obj %}
+            <div class="row">
+                <div class="col-md-8 blog-main">
+                    {% for text in text_obj %}
+                        <div class="card rounded">
+                           <h5 class="card-header">Дата создания: {{ text.created_date }}</h5>
+                           <div class="card-body">
+                             <h5 class="card-title">Рубрика: {{ text.rubrics }}</h5>
+                             <a href="/search/text/{{ text.id }}" class="btn btn-primary">Текст</a>
+                           </div>
+
+                        <h5 class="card-footer">ID текста:{{ text.id }}</h5>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
